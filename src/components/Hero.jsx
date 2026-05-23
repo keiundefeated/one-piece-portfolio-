@@ -1,6 +1,7 @@
 import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { personal } from "../data/portfolio";
+import profileImg from "../assets/profile.jpg";
 
 export default function Hero() {
   const containerRef = useRef(null);
@@ -201,8 +202,8 @@ export default function Hero() {
         >
           <div className="text-center">
             <div className="text-[10px] uppercase tracking-widest text-gold mb-1">WANTED</div>
-            <div className="w-full aspect-[3/4] bg-ocean-dark rounded mb-2 flex items-center justify-center text-5xl border border-gold/30">
-              ☠️
+            <div className="w-full aspect-[3/4] bg-ocean-dark rounded mb-2 overflow-hidden border border-gold/30">
+              <img src={profileImg} alt={personal.name} className="w-full h-full object-cover" />
             </div>
             <div className="font-pirate text-gold text-lg leading-tight">{personal.name}</div>
             <div className="text-gold-light/60 text-[10px]">Bounty</div>

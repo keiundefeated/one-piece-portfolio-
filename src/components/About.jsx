@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { personal, education, certifications, softSkills } from "../data/portfolio";
+import profileImg from "../assets/profile.jpg";
 
 const stats = [
   { label: "Technologies", value: "15+" },
@@ -40,8 +41,8 @@ export default function About() {
             <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-gold/10 to-transparent rounded-bl-full" />
 
             <div className="flex items-start gap-6 mb-6">
-              <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-gold to-sunset flex items-center justify-center text-5xl flex-shrink-0 border-2 border-gold/50">
-                ☠️
+              <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden flex-shrink-0 border-2 border-gold/50 ring-2 ring-gold/20">
+                <img src={profileImg} alt={personal.name} className="w-full h-full object-cover" />
               </div>
               <div>
                 <h3 className="font-pirate text-2xl md:text-3xl text-gold">{personal.name}</h3>
