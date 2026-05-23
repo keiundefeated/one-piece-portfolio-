@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { skills } from "../data/portfolio";
+import { skills, skillCategories } from "../data/portfolio";
 
 export default function Skills() {
   return (
@@ -94,6 +94,43 @@ export default function Skills() {
             </motion.div>
           ))}
         </div>
+
+        {/* Skill Categories */}
+        <motion.div
+          className="mt-16"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+        >
+          <h3 className="font-pirate text-2xl md:text-3xl text-gold text-center mb-8">
+            Complete Arsenal
+          </h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {skillCategories.map((cat, i) => (
+              <motion.div
+                key={cat.title}
+                className="glass rounded-2xl p-5"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+              >
+                <h4 className="font-pirate text-lg text-gold-light mb-3">{cat.title}</h4>
+                <div className="flex flex-wrap gap-2">
+                  {cat.items.map((item) => (
+                    <span
+                      key={item}
+                      className="text-xs px-2.5 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

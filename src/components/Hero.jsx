@@ -153,7 +153,7 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.4 }}
           >
-            {personal.description}
+            {personal.summary}
           </motion.p>
 
           <motion.div
